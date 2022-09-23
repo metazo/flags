@@ -5,16 +5,14 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          {/* Si jammais on a mis une mauvaise URL (*) */}
-          <Route path="/*" element={<Home />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        {/* path="*" fonctionne si jamais l'url ne correspond à rien de déclaré au dessus */}
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
